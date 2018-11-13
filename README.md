@@ -1,2 +1,2 @@
 # Password-Generator
-A service that generates strong passwords
+A service that generates strong secure passwords
