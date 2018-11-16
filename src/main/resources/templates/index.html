@@ -33,6 +33,11 @@
             width: 80px !important;
         }
 
+        .custom-padding{
+            padding-left:30px;
+            padding-right:100px;
+        }
+
     </style>
 </head>
 
@@ -41,7 +46,108 @@
     <div class="panel panel-default">
         <div class="panel-heading"><span class="h2">Secure Password Generator</span></div>
         <div class="panel-body">
-            <P>Select filter options</P>
+            <div class="formcontainer">
+                <form ng-submit="ctrl.submit()" name="myForm" class="form-horizontal">
+
+                    <!--<input type="hidden" ng-model="ctrl.user.id" />-->
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label class="col-md-4 control-lable">Password Length</label>
+                            <div class="col-md-4">
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option disabled>Weak</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                        <option>11</option>
+                                        <option>12</option>
+                                        <option>13</option>
+                                        <option>14</option>
+                                        <option>15</option>
+                                        <option disabled>Strong</option>
+                                        <option>16</option>
+                                        <option>17</option>
+                                        <option>18</option>
+                                        <option>19</option>
+                                        <option>20</option>
+                                    </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label class="col-md-4 control-lable" >Include Symbols</label>
+                            <div class="col-md-7">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">( e.g. @#$% )</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label class="col-md-4 control-lable" >Include Numbers</label>
+                            <div class="col-md-7">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck2">
+                                <label class="form-check-label" for="exampleCheck1">( e.g. 123456 )</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label class="col-md-4 control-lable" >Include Lowercase Characters</label>
+                            <div class="col-md-7">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck3">
+                                <label class="form-check-label" for="exampleCheck1">( e.g. abcdef )</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label class="col-md-4 control-lable" >Include Uppercase Characters</label>
+                            <div class="col-md-7">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck4">
+                                <label class="form-check-label" for="exampleCheck1">( e.g. ABCDEF )</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label class="col-md-4 control-lable" for="genPass">Generated Password</label>
+                            <div class="col-md-6">
+                                <input type="text" id="genPass" class=" form-control input-sm" placeholder="" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--<div class="row">
+                        <div class="form-group col-md-12">
+                            <label class="col-md-2 control-lable" >Include Symbols</label>
+                            <div class="col-md-7">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">( e.g. @#$% )</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label class="col-md-2 control-lable" >Include Symbols</label>
+                            <div class="col-md-7">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">( e.g. @#$% )</label>
+                            </div>
+                        </div>
+                    </div>-->
+
+                </form>
+            </div>
         </div>
         <div class="panel-footer">
             <div class="row">
