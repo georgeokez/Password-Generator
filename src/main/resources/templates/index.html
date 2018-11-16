@@ -3,10 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <title>Password Generator</title>
+
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <style>
+        body, #mainWrapper {
+            height: 70%;
+            background-color:rgb(245, 245, 245);
+        }
+
+        .generic-container {
+            width:70%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #CFD8DC;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 0 5px black;
+        }
+
+        .floatRight{
+            float:right;
+            margin-right: 18px;
+        }
+
+        .custom-width {
+            width: 80px !important;
+        }
+
+    </style>
 </head>
-<body>
 
-<h1>Password Generator</h1>
+<body ng-app="myApp">
+<div class="generic-container" ng-controller="JokeController">
+    <div class="panel panel-default">
+        <div class="panel-heading"><span class="h2">Secure Password Generator</span></div>
+        <div class="panel-body">
+            <P>Select filter options</P>
+        </div>
+        <div class="panel-footer">
+            <div class="row">
+                <div class="text-center">
+                    <button class="btn btn-info" ng-click="generatePassword()">Generate Password</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
+
+
+
+<div th:fragment="body-bottom-scripts">
+    <script src="assets/angular/angular.js"></script>
+    <script src="assets/angular/angular-resource.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="app/main.js"></script>
+    <!--<script src="app/service/jokeService.js"></script>-->
+    <script src="app/controller/jokeController.js"></script>
+</div>
 </body>
 </html>
