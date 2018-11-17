@@ -42,7 +42,7 @@
 </head>
 
 <body ng-app="myApp">
-<div class="generic-container" ng-controller="JokeController">
+<div class="generic-container" ng-controller="PassGenController">
     <div class="panel panel-default">
         <div class="panel-heading"><span class="h2">Secure Password Generator</span></div>
         <div class="panel-body">
@@ -54,7 +54,7 @@
                         <div class="form-group col-md-12">
                             <label class="col-md-4 control-lable">Password Length</label>
                             <div class="col-md-4">
-                                    <select class="form-control" id="exampleFormControlSelect1">
+                                    <select class="form-control" id="exampleFormControlSelect1" ng-model="passwordLength">
                                         <option disabled>Weak</option>
                                         <option>6</option>
                                         <option>7</option>
@@ -81,7 +81,7 @@
                         <div class="form-group col-md-12">
                             <label class="col-md-4 control-lable" >Include Symbols</label>
                             <div class="col-md-7">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1" ng-model="symbolSelect">
                                 <label class="form-check-label" for="exampleCheck1">( e.g. @#$% )</label>
                             </div>
                         </div>
@@ -91,7 +91,7 @@
                         <div class="form-group col-md-12">
                             <label class="col-md-4 control-lable" >Include Numbers</label>
                             <div class="col-md-7">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck2">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck2" ng-model="numbSelect">
                                 <label class="form-check-label" for="exampleCheck1">( e.g. 123456 )</label>
                             </div>
                         </div>
@@ -99,9 +99,9 @@
 
                     <div class="row">
                         <div class="form-group col-md-12">
-                            <label class="col-md-4 control-lable" >Include Lowercase Characters</label>
+                            <label class="col-md-4 control-lable">Include Lowercase Characters</label>
                             <div class="col-md-7">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck3">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck3" ng-model="lowerCaseSelect">
                                 <label class="form-check-label" for="exampleCheck1">( e.g. abcdef )</label>
                             </div>
                         </div>
@@ -111,7 +111,7 @@
                         <div class="form-group col-md-12">
                             <label class="col-md-4 control-lable" >Include Uppercase Characters</label>
                             <div class="col-md-7">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck4">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck4" ng-model="upperCaseSelect">
                                 <label class="form-check-label" for="exampleCheck1">( e.g. ABCDEF )</label>
                             </div>
                         </div>
@@ -121,7 +121,7 @@
                         <div class="form-group col-md-12">
                             <label class="col-md-4 control-lable" for="genPass">Generated Password</label>
                             <div class="col-md-6">
-                                <input type="text" id="genPass" class=" form-control input-sm" placeholder="" />
+                                <input type="text" id="genPass" class=" form-control input-sm" placeholder="" ng-model="generatedPassword" />
                             </div>
                         </div>
                     </div>
@@ -152,7 +152,7 @@
         <div class="panel-footer">
             <div class="row">
                 <div class="text-center">
-                    <button class="btn btn-info" ng-click="generatePassword()">Generate Password</button>
+                    <button class="btn btn-info" ng-click="generatePassword()" ng-disabled="myorm.$pristine">Generate Password</button>
                 </div>
             </div>
         </div>
@@ -168,7 +168,7 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="app/main.js"></script>
     <!--<script src="app/service/jokeService.js"></script>-->
-    <script src="app/controller/jokeController.js"></script>
+    <script src="app/controller/passGenController.js"></script>
 </div>
 </body>
 </html>
