@@ -1,5 +1,5 @@
 'use strict';
-// Deploey to live Heroku
+// Deploy to live Heroku
 App.controller('PassGenController', ['$scope','$http', function ($scope, $http) {
 
     var numbArray = ["0","1","2","3","4","5","6","7","8","9"];
